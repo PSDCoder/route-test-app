@@ -1,0 +1,19 @@
+$theme-main-color: #d7e2e8;
+
+$global-bg: tint($theme-main-color, 70%);
+$global-editor-bg: #ffffff;
+$global-border-color: $theme-main-color;
+$global-offset: 30px;
+$global-color: shade($theme-main-color, 70%);
+
+//buttons
+$global-button-bg: shade($theme-main-color, 10%);
+$global-button-color: shade($theme-main-color, 50%);
+
+//inputs
+$global-input-font-size: 18px;
+$global-input-height: 40px;
+$global-input-padding: 7px;
+
+//map
+$global-map-height: 400px;

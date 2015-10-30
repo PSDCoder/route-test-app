@@ -1,0 +1,46 @@
+$block-name: 'route-points';
+$point-base-size: 16px;
+
+.#{$block-name} {
+  margin: 10px 0;
+  padding: 0;
+  list-style: none;
+
+  @include media('<=tablet') {
+    margin-bottom: $global-offset / 2;
+  }
+
+  &__point {
+    position: relative;
+    margin-bottom: 5px;
+    background-color: tint($global-border-color, 80%);
+    border-left: 5px solid $global-border-color;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  &__point-icon {
+    margin-right: $point-base-size / 2;
+
+    .svg-icon{
+      fill: inherit;
+    }
+  }
+
+  &__point-name {
+    margin-right: $point-base-size * 2;
+    color: $global-color;
+  }
+
+  &__point-remove {
+    @include states-values('background-color', calc-state-colors($global-button-bg));
+    @include states-values('color', calc-state-colors($global-button-color));
+    @include states-values('outline', (all: none));
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: none;
+    padding: $point-base-size / 2 $point-base-size;
+    cursor: pointer;
+  }
+}

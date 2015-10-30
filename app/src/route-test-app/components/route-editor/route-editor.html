@@ -1,0 +1,35 @@
+<main class="route-editor">
+    <aside class="route-editor__management">
+        <input type="text"
+               class="route-editor__adder"
+               placeholder="Введите название точки..."
+               ng-model="routeEditor.pointName"
+               ng-keydown="routeEditor.addPoint($event, routeEditor.pointName)"/>
+        <p class="route-editor__no-points-text" ng-hide="routeEditor.points.length">Не добавлено ни одной точки</p>
+        <ul class="route-points"
+            as-sortable="routeEditor.sortingOptions"
+            ng-model="routeEditor.points">
+            <li class="route-points__point"
+                ng-repeat="point in routeEditor.points track by point.coordinates.join('|')"
+                as-sortable-item>
+                <div as-sortable-item-handle>
+                    <svg-icon class="route-points__point-icon"
+                              type="circle"
+                              size="medium"
+                              ng-style="routeEditor.getPointStyle($index)"></svg-icon>
+                    <span class="route-points__point-name">
+                        {{:: point.name }}
+                    </span>
+                    <button class="route-points__point-remove" ng-click="routeEditor.removePoint(point)">
+                        <svg-icon type="remove" size="small"></svg-icon>
+                    </button>
+                </div>
+            </li>
+        </ul>
+    </aside>
+    <yandex-map class="route-editor__map"
+                map-api="routeEditor.map"
+                route="routeEditor.points"
+                on-drag-point="routeEditor.onDragPoint(index, coordinates)">
+    </yandex-map>
+</main>

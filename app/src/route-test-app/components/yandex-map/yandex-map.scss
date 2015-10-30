@@ -1,0 +1,20 @@
+$block-name: 'yandex-map';
+
+.#{$block-name} {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $global-border-color;
+
+  &_loading:before {
+    display: block;
+    width: 100%;
+    content: 'Загрузка...';
+    font-size: 2em;
+    line-height: $global-map-height;
+    text-align: center;
+    color: shade($global-border-color, 50%);
+  }
+}

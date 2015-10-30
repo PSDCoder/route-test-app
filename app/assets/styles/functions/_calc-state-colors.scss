@@ -1,0 +1,9 @@
+@function calc-state-colors($base-color) {
+  @return (
+    default: $base-color,
+    hover: tint($base-color, 30%),
+    focus: shade($base-color, 10%),
+    active: shade($base-color, 20%),
+    disabled: desaturate($base-color, 100%)
+  )
+}

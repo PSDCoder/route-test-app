@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en" ng-app="route-test-app">
+<head>
+    <meta charset="UTF-8">
+    <title>Route test app</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width">
+    <meta name="fragment" content="!" />
+
+    <!-- build:css /<%= config.paths.destAssetsRelative %>/<%= config.paths.src.scss.vendors.outputFilename %> -->
+        <link rel="stylesheet" href="bower_components/ng-sortable/dist/ng-sortable.css"/>
+        <link rel="stylesheet" href="bower_components/ng-notify/dist/ng-notify.min.css"/>
+        <!-- inject:css (assets/**/*.css) -->
+        
+        <!-- endinject -->
+    <!-- endbuild -->
+    <link rel="stylesheet" href="/<%= config.paths.destAssetsRelative %>/<%= config.paths.src.scss.main.outputFilename %>"/>
+</head>
+<body>
+    <div class="app">
+        <route-editor></route-editor>
+    </div>
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" defer></script>
+    <!-- build:js /<%= config.paths.destAssetsRelative %>/<%= config.paths.src.js.vendors.outputFilename %> defer-->
+        <!-- inject:js:bower -->
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="bower_components/ng-sortable/dist/ng-sortable.js"></script>
+        <script src="bower_components/ng-notify/src/scripts/ng-notify.js"></script>
+        <script src="bower_components/lodash/lodash.js"></script>
+        <!-- endinject -->
+    <!-- endbuild -->
+    <!-- build:js /<%= config.paths.destAssetsRelative %>/<%= config.paths.src.js.app.outputFilename %> defer-->
+        <!-- inject:js:app (src/**/*.module.js) -->
+        <script src="src/route-test-app/route-test-app.module.js"></script>
+        <script src="src/svg-icons/svg-icons.module.js"></script>
+        <script src="src/vendors/vendors.module.js"></script>
+        <!-- endinject -->
+        <!-- inject:js:app (src/**/!(*.module|*.spec).js) -->
+        <script src="src/route-test-app/components/route-editor/RouteEditorCtrl.controller.js"></script>
+        <script src="src/route-test-app/components/route-editor/route-editor.directive.js"></script>
+        <script src="src/route-test-app/components/yandex-map/YandexMapCtrl.controller.js"></script>
+        <script src="src/route-test-app/components/yandex-map/YandexMapLoader.factory.js"></script>
+        <script src="src/route-test-app/components/yandex-map/yandex-map.directive.js"></script>
+        <script src="src/route-test-app/decorators/ngNotify.decorator.js"></script>
+        <script src="src/route-test-app/route-test-app.config.js"></script>
+        <script src="src/route-test-app/route-test-app.consts.js"></script>
+        <script src="src/route-test-app/services/Geolocation.service.js"></script>
+        <script src="src/svg-icons/blocks/svg-icon/svg-icon.directice.js"></script>
+        <script src="src/svg-icons/services/SvgIcons.provider.js"></script>
+        <!-- endinject -->
+    <!-- endbuild -->
+    <script src="/<%= config.paths.destAssetsRelative %>/<%= config.paths.src.templates.outputFilename %>" defer></script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+$sprites: (
+    {{#each sprites}}
+        {{name}}: (
+            name: '{{name}}',
+            width: {{px.width}},
+            height: {{px.height}},
+            x: {{px.x}},
+            y: {{px.y}},
+            offset-x: {{px.offset_x}},
+            offset-y: {{px.offset_y}},
+            total-width: {{px.total_width}},
+            total-height: {{px.total_height}},
+            img: '{{{escaped_image}}}',
+        ),
+    {{/each}}
+);
+
+@function get-sprite($sprite-name){
+    @if not map-has-key($sprites, $sprite-name) {
+        @warn "Unfortunately, no value could be retrieved from `#{$sprites}`. Please make sure it is defined in `$sprites` map.";
+    }
+
+    @return map-get($sprites, $sprite-name);
+}
+
+@mixin sprite-width($sprite-name) {
+    $sprite: get-sprite($sprite-name);
+
+    width: map-get($sprite, 'width');
+}
+
+@mixin sprite-height($sprite-name) {
+    $sprite: get-sprite($sprite-name);
+
+    height: map-get($sprite, 'height');
+}
+
+@mixin sprite-position($sprite-name) {
+    $sprite: get-sprite($sprite-name);
+
+    background-position: map-get($sprite, 'offset-x') map-get($sprite, 'offset-y');
+}
+
+@mixin sprite-image($sprite-name) {
+    $sprite: get-sprite($sprite-name);
+    $sprite-bg-image: map-get($sprite, 'img');
+
+    background-image: url(#{$sprite-bg-image});
+}
+
+@mixin sprite($sprite-name) {
+    @include sprite-image($sprite-name);
+    @include sprite-position($sprite-name);
+    @include sprite-width($sprite-name);
+    @include sprite-height($sprite-name);
+}

@@ -1,0 +1,50 @@
+//vendors
+@import 'vendors/include-media';
+
+//functions
+@import 'functions/shade';
+@import 'functions/tint';
+@import 'functions/calc-state-colors';
+
+//mixins
+@import 'mixins/states-values';
+
+//additional
+@import 'sprite';
+@import 'sprite-svg';
+@import 'sprite-svg-fallback';
+@import "../../src/svg-icons/blocks/svg-icon/svg-icon";
+
+//app globals
+@import 'variables';
+
+//components
+@import '../../src/route-test-app/components/route-editor/route-editor';
+@import '../../src/route-test-app/components/route-editor/route-points';
+@import '../../src/route-test-app/components/yandex-map/yandex-map';
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Verdana, sans-serif;
+  background-color: $global-bg;
+}
+
+* {
+  box-sizing: inherit;
+
+  &:before,
+  &:after {
+    box-sizing: inherit;
+  }
+}
+
+
+
+.app {
+  max-width: 960px;
+  margin: $global-offset auto 0;
+}

@@ -1,0 +1,53 @@
+$block-name: 'route-editor';
+
+.#{$block-name} {
+  padding: $global-offset / 2;
+  border: 1px solid $global-border-color;
+  background-color: $global-editor-bg;
+  overflow: hidden;
+  margin-left: $global-offset / 2;
+  margin-right: $global-offset / 2;
+
+  &__management {
+    width: 40%;
+    float: left;
+    padding-right: $global-offset;
+
+    @include media('<=tablet') {
+      width: 100%;
+      float: none;
+      padding-right: 0;
+    }
+  }
+
+  &__map {
+    position: relative;
+    display: block;
+    width: 60%;
+    height: $global-map-height;
+    float: left;
+
+    @include media('<=tablet') {
+      width: 100%;
+      float: none;
+    }
+  }
+
+  &__adder {
+    @include states-values('border-color', calc-state-colors($global-border-color));
+    @include states-values('outline', (all: none));
+
+    width: 100%;
+    height: $global-input-height;
+    padding: $global-input-padding;
+    border-width: 1px;
+    border-style: solid;
+    font-size: $global-input-font-size;
+    line-height: $global-input-height - $global-input-padding * 2;
+    color: $global-color;
+  }
+
+  &__no-points-text {
+    color: tint($global-color, 20%);
+  }
+}
