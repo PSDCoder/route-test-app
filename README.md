@@ -15,3 +15,11 @@
 * `gulp build [--env=prod]` - build project in folder specified by gulp config and passed environment.
 * `gulp serve [--env=prod] [--watch]` - Build and run server. If specified `--watch` argument then watchers will be set up. (Only for dev environment).
 * `gulp test [--watch]` - Run tests. If specified `--watch` argument then watchers will be setup and you can work in dev mode. (Only for dev environment).
+
+### Running
+
+You need installed NodeJS and NPM.
+
+* `npm install`
+* `bower install`
+* `gulp serve`
