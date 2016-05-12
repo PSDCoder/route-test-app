@@ -137,7 +137,7 @@ module.exports = function (gm) {
                 },
                 svg: {
                     fallback: {
-                        backgroundUrl: '/' + path.join('assets', 'svgs', 'sprite-svg-fallback.png'),
+                        backgroundUrl: './assets/svgs/sprite-svg-fallback.png',
                         cssTemplate: path.join(assets, 'styles', 'sprite-svg-fallback.lodash.tpl')
                     },
                     svgSprite: {
