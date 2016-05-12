@@ -14,7 +14,7 @@
     "build:prod": "./node_modules/.bin/gulp build --env=prod",
     "serve:dev": "./node_modules/.bin/gulp serve",
     "serve:prod": "./node_modules/.bin/gulp serve --env=prod",
-    "update-gh-pages": "npm run build:prod && git subtree push --prefix dist origin gh-pages"
+    "update-gh-pages": "npm run build:prod && git add . && git ci -m \"Updated dist\" && git subtree push --prefix dist origin gh-pages"
   },
   "keywords": [],
   "author": "Pavel Grinchenko <psdcoder@gmail.com>",
