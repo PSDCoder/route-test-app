@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="fragment" content="!" />
 
-    <!-- build:css /<%= config.paths.destAssetsRelative %>/<%= config.paths.src.scss.vendors.outputFilename %> -->
+    <!-- build:css ./<%= config.paths.destAssetsRelative %>/<%= config.paths.src.scss.vendors.outputFilename %> -->
         <link rel="stylesheet" href="bower_components/ng-sortable/dist/ng-sortable.css"/>
         <link rel="stylesheet" href="bower_components/ng-notify/dist/ng-notify.min.css"/>
         <!-- inject:css (assets/**/*.css) -->
@@ -21,7 +21,7 @@
         <route-editor></route-editor>
     </div>
     <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" defer></script>
-    <!-- build:js /<%= config.paths.destAssetsRelative %>/<%= config.paths.src.js.vendors.outputFilename %> defer-->
+    <!-- build:js ./<%= config.paths.destAssetsRelative %>/<%= config.paths.src.js.vendors.outputFilename %> defer-->
         <!-- inject:js:bower -->
         <script src="bower_components/angular/angular.js"></script>
         <script src="bower_components/ng-sortable/dist/ng-sortable.js"></script>
@@ -29,7 +29,7 @@
         <script src="bower_components/lodash/lodash.js"></script>
         <!-- endinject -->
     <!-- endbuild -->
-    <!-- build:js /<%= config.paths.destAssetsRelative %>/<%= config.paths.src.js.app.outputFilename %> defer-->
+    <!-- build:js ./<%= config.paths.destAssetsRelative %>/<%= config.paths.src.js.app.outputFilename %> defer-->
         <!-- inject:js:app (src/**/*.module.js) -->
         <script src="src/route-test-app/route-test-app.module.js"></script>
         <script src="src/svg-icons/svg-icons.module.js"></script>
@@ -49,6 +49,6 @@
         <script src="src/svg-icons/services/SvgIcons.provider.js"></script>
         <!-- endinject -->
     <!-- endbuild -->
-    <script src="/<%= config.paths.destAssetsRelative %>/<%= config.paths.src.templates.outputFilename %>" defer></script>
+    <script src="./<%= config.paths.destAssetsRelative %>/<%= config.paths.src.templates.outputFilename %>" defer></script>
 </body>
 </html>
