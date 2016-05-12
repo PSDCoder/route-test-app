@@ -1,5 +1,9 @@
 # Angular template with configured gulp flow
 
+### Demo
+
+[Demo page](https://psdcoder.github.io/route-test-app/index.html)
+
 ### Includes:
 
 * Generating svg sprite with fallback for old browsers. Includes angular directive for simple usage
